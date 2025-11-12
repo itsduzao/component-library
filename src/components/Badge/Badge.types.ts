@@ -1,17 +1,10 @@
-export type BadgeFormat = 'square' | 'pill';
+import { BADGE_COLORS, BADGE_FORMATS } from "./Badge.constants";
 
-export type BadgeColor =
-  | 'gray'
-  | 'red'
-  | 'yellow'
-  | 'green'
-  | 'blue'
-  | 'indigo'
-  | 'purple'
-  | 'pink';
+export type BadgeFormat = typeof BADGE_FORMATS[number]
+export type BadgeColor = typeof BADGE_COLORS[number]
 
 export interface BadgeProps {
-  children: React.ReactNode;
-  format?: BadgeFormat;
-  color?: BadgeColor;
+  children: React.ReactNode
+  format?: BadgeFormat
+  color?: BadgeColor
 }
