@@ -72,14 +72,11 @@ export const Red: Story = {
 export const AllColors: Story = {
   render: () => (
     <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-      <Badge color="gray">Gray</Badge>
-      <Badge color="red">Red</Badge>
-      <Badge color="yellow">Yellow</Badge>
-      <Badge color="green">Green</Badge>
-      <Badge color="blue">Blue</Badge>
-      <Badge color="indigo">Indigo</Badge>
-      <Badge color="purple">Purple</Badge>
-      <Badge color="pink">Pink</Badge>
+      {BADGE_COLORS.map((color) => (
+        <Badge key={color} color={color}>
+          {color.charAt(0).toUpperCase() + color.slice(1)}
+        </Badge>
+      ))}
     </div>
   ),
 };
@@ -87,12 +84,11 @@ export const AllColors: Story = {
 export const AllFormats: Story = {
   render: () => (
     <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
-      <Badge format="square" color="blue">
-        Square
-      </Badge>
-      <Badge format="pill" color="blue">
-        Pill
-      </Badge>
+      {BADGE_FORMATS.map((format) => (
+        <Badge key={format} format={format} color="blue">
+          {format.charAt(0).toUpperCase() + format.slice(1)}
+        </Badge>
+      ))}
     </div>
   ),
 };
