@@ -1,0 +1,1 @@
+export const BANNER_STATUSES = ['success', 'info', 'warning', 'error'] as const;

@@ -1,5 +1,54 @@
 .banner-wrapper {
     display: flex;
     gap: 0.75rem;
+    border-radius: 6px;
+    padding: 1rem;
 }
 
+.banner-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.banner-title {
+    color: var(--banner-title-color);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: Inter;
+    letter-spacing: 0%
+}
+
+.banner-content {
+    color: var(--banner-content-color);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: Inter;
+    letter-spacing: 0%
+}
+
+.banner-success {
+    --banner-title-color: #065F46;
+    --banner-content-color: #047857;
+    background-color: #ECFDF5;
+}
+
+.banner-info {
+    --banner-title-color: #1E40AF;
+    --banner-content-color: #1D4ED8;
+    background-color: #EFF6FF;
+}
+
+.banner-warning {
+    --banner-title-color: #92400E;
+    --banner-content-color: #B45309;
+    background-color: #FFFBEB;
+}
+
+.banner-error {
+    --banner-title-color: #991B1B;
+    --banner-content-color: #B91C1C;
+    background-color: #FEF2F2;
+}
