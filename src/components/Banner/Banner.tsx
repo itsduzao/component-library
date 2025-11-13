@@ -1,27 +1,31 @@
 import { ReactElement } from "react";
+import { BANNER_CONFIG } from "./Banner.config";
 import "./Banner.css";
 import { BannerProps } from "./Banner.types";
-import { IconError } from "./icons/IconError";
-import { IconInfo } from "./icons/IconInfo";
-import { IconSuccess } from "./icons/IconSuccess";
-import { IconWarning } from "./icons/IconWarning";
-
-const ICONS_MAP = {
-  success: IconSuccess,
-  info: IconInfo,
-  warning: IconWarning,
-  error: IconError,
-};
 
 export function Banner({ status, title, content }: BannerProps): ReactElement {
-  const Icon = ICONS_MAP[status];
+  const config = BANNER_CONFIG[status];
+  const Icon = config.icon;
+
   return (
     <>
-      <div className={`banner-wrapper banner-${status}`}>
+      <div
+        className={`banner-wrapper banner-${status}`}
+        role={config.role}
+        aria-live={config.ariaLive}
+        aria-labelledby={`banner-title-${status}`}
+        aria-describedby={content ? `banner-content-${status}` : undefined}
+      >
         <Icon />
         <div className="banner-text-container">
-          <span className="banner-title">{title}</span>
-          {content && <span className="banner-content">{content}</span>}
+          <span className="banner-title" id={`banner-title-${status}`}>
+            {title}
+          </span>
+          {content && (
+            <span className="banner-content" id={`banner-content-${status}`}>
+              {content}
+            </span>
+          )}
         </div>
       </div>
     </>

@@ -1,5 +1,5 @@
-import "./Badge.css";
 import type { ReactElement } from "react";
+import "./Badge.css";
 import { BadgeProps } from "./Badge.types";
 
 export function Badge({
@@ -7,6 +7,14 @@ export function Badge({
   format = "square",
   color = "gray",
 }: BadgeProps): ReactElement {
-  return <span className={`badge ${color} ${format}`}>{children}</span>;
+  return (
+    <span
+      className={`badge ${color} ${format}`}
+      role="status"
+      aria-label={`${color} badge: ${children}`}
+    >
+      {children}
+    </span>
+  );
 }
 
