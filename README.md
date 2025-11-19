@@ -1,3 +1,3 @@
 # TODO
 
-[] Fix Badge failling tests
+[] Create card component
