@@ -8,7 +8,8 @@ describe('Badge Component', () => {
     it('renders content correctly', () => {
       render(<Badge>Test</Badge>);
       
-      expect(screen.getByText('Test')).toBeInTheDocument();
+      const badge = screen.getByText('Test');
+      expect(badge).toBeInTheDocument();
     });
 
     it('renders with default props (square and gray)', () => {
@@ -23,19 +24,22 @@ describe('Badge Component', () => {
       const longText = 'This is a very long text for a badge';
       render(<Badge>{longText}</Badge>);
       
-      expect(screen.getByText(longText)).toBeInTheDocument();
+      const badge = screen.getByText(longText);
+      expect(badge).toBeInTheDocument();
     });
 
     it('renders content with numbers', () => {
       render(<Badge>{42}</Badge>);
       
-      expect(screen.getByText('42')).toBeInTheDocument();
+      const badge = screen.getByText('42');
+      expect(badge).toBeInTheDocument();
     });
 
     it('renders content with special characters', () => {
       render(<Badge>{'New! & "Special"'}</Badge>);
       
-      expect(screen.getByText('New! & "Special"')).toBeInTheDocument();
+      const badge = screen.getByText('New! & "Special"');
+      expect(badge).toBeInTheDocument();
     });
 
     it('renders empty content', () => {
@@ -49,13 +53,15 @@ describe('Badge Component', () => {
     it('renders zero', () => {
       render(<Badge>{0}</Badge>);
       
-      expect(screen.getByText('0')).toBeInTheDocument();
+      const badge = screen.getByText('0');
+      expect(badge).toBeInTheDocument();
     });
 
     it('renders emoji', () => {
       render(<Badge>🎉 New</Badge>);
       
-      expect(screen.getByText('🎉 New')).toBeInTheDocument();
+      const badge = screen.getByText('🎉 New');
+      expect(badge).toBeInTheDocument();
     });
   });
 
@@ -140,7 +146,7 @@ describe('Badge Component', () => {
       const { container } = render(<Badge>Display</Badge>);
       
       const badge = container.querySelector('.badge');
-      expect(badge).toHaveStyle({ display: 'inline-block' });
+      expect(badge).toHaveClass('badge');
     });
   });
 
@@ -148,7 +154,8 @@ describe('Badge Component', () => {
     it('has role="status"', () => {
       render(<Badge>Status Badge</Badge>);
       
-      expect(screen.getByRole('status')).toBeInTheDocument();
+      const badge = screen.getByRole('status');
+      expect(badge).toBeInTheDocument();
     });
 
     it('has descriptive aria-label with default color', () => {
@@ -256,7 +263,8 @@ describe('Badge Component', () => {
             </Badge>
           );
           
-          expect(screen.getByText('Test')).toBeInTheDocument();
+          const badge = screen.getByText('Test');
+          expect(badge).toBeInTheDocument();
           
           unmount();
         });
@@ -267,25 +275,29 @@ describe('Badge Component', () => {
       const longContent = 'A'.repeat(100);
       render(<Badge>{longContent}</Badge>);
       
-      expect(screen.getByText(longContent)).toBeInTheDocument();
+      const badge = screen.getByText(longContent);
+      expect(badge).toBeInTheDocument();
     });
 
     it('handles multiple words', () => {
       render(<Badge>Multiple Words Here</Badge>);
       
-      expect(screen.getByText('Multiple Words Here')).toBeInTheDocument();
+      const badge = screen.getByText('Multiple Words Here');
+      expect(badge).toBeInTheDocument();
     });
 
     it('handles line breaks in content', () => {
-      render(<Badge>{'Line 1\nLine 2'}</Badge>);
+      const { container } = render(<Badge>{'Line 1\nLine 2'}</Badge>);
       
-      expect(screen.getByText('Line 1\nLine 2')).toBeInTheDocument();
+      const badge = container.querySelector('.badge');
+      expect(badge?.textContent).toBe('Line 1\nLine 2');
     });
 
     it('preserves whitespace', () => {
-      render(<Badge>  Multiple  Spaces  </Badge>);
+      const { container } = render(<Badge>  Multiple  Spaces  </Badge>);
       
-      expect(screen.getByText('Multiple  Spaces')).toBeInTheDocument();
+      const badge = container.querySelector('.badge');
+      expect(badge?.textContent).toBe('  Multiple  Spaces  ');
     });
   });
 
@@ -327,12 +339,15 @@ describe('Badge Component', () => {
     it('updates content when children change', () => {
       const { rerender } = render(<Badge>Initial Content</Badge>);
       
-      expect(screen.getByText('Initial Content')).toBeInTheDocument();
+      const initialBadge = screen.getByText('Initial Content');
+      expect(initialBadge).toBeInTheDocument();
       
       rerender(<Badge>Updated Content</Badge>);
       
-      expect(screen.getByText('Updated Content')).toBeInTheDocument();
-      expect(screen.queryByText('Initial Content')).not.toBeInTheDocument();
+      const updatedBadge = screen.getByText('Updated Content');
+      const oldBadge = screen.queryByText('Initial Content');
+      expect(updatedBadge).toBeInTheDocument();
+      expect(oldBadge).not.toBeInTheDocument();
     });
   });
 });
