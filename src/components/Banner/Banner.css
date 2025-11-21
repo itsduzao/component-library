@@ -1,54 +1,52 @@
 .banner-wrapper {
     display: flex;
-    gap: 0.75rem;
-    border-radius: 6px;
-    padding: 1rem;
+    gap: var(--banner-gap);
+    border-radius: var(--banner-radius);
+    padding: var(--banner-padding);
 }
 
 .banner-text-container {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--banner-text-gap);
 }
 
 .banner-title {
     color: var(--banner-title-color);
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    font-family: Inter;
-    letter-spacing: 0%
+    font-weight: var(--banner-title-weight);
+    font-size: var(--banner-title-size);
+    line-height: var(--banner-title-line-height);
+    font-family: var(--banner-font-family);
 }
 
 .banner-content {
     color: var(--banner-content-color);
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    font-family: Inter;
-    letter-spacing: 0%
+    font-weight: var(--banner-content-weight);
+    font-size: var(--banner-content-size);
+    line-height: var(--banner-content-line-height);
+    font-family: var(--banner-font-family);
 }
 
 .banner-success {
-    --banner-title-color: #065F46;
-    --banner-content-color: #047857;
-    background-color: #ECFDF5;
+    --banner-title-color: var(--green-800);
+    --banner-content-color: var(--green-700);
+    background-color: var(--green-50);
 }
 
 .banner-info {
-    --banner-title-color: #1E40AF;
-    --banner-content-color: #1D4ED8;
-    background-color: #EFF6FF;
+    --banner-title-color: var(--blue-700);
+    --banner-content-color: var(--blue-800);
+    background-color: var(--blue-50);
 }
 
 .banner-warning {
-    --banner-title-color: #92400E;
-    --banner-content-color: #B45309;
-    background-color: #FFFBEB;
+    --banner-title-color: var(--yellow-800);
+    --banner-content-color: var(--yellow-700);
+    background-color: var(--yellow-50);
 }
 
 .banner-error {
-    --banner-title-color: #991B1B;
-    --banner-content-color: #B91C1C;
-    background-color: #FEF2F2;
+    --banner-title-color: var(--red-800);
+    --banner-content-color: var(--red-700);
+    background-color: var(--red-50);
 }
