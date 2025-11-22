@@ -1,5 +1,7 @@
+import { ComponentType, SVGProps } from "react";
+
 export interface CardProps {
-  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon?: ComponentType<SVGProps<SVGSVGElement>>;
   title: string;
   content: string;
 }
