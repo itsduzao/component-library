@@ -7,15 +7,23 @@ export function Card({ icon: Icon, title, content }: CardProps): ReactElement {
   const IconComponent = Icon || IconUpload;
 
   return (
-    <div className="card-container">
-      <div className="icon-container">
-        <IconComponent />
+    <article
+      className="card-container"
+      aria-labelledby="card-title"
+      aria-describedby="card-content"
+    >
+      <div className="icon-container" role="img" aria-label="Card icon">
+        <IconComponent aria-hidden="true" />
       </div>
       <div className="card-text-wrapper">
-        <p className="card-title">{title}</p>
-        <p className="card-content">{content}</p>
+        <h3 id="card-title" className="card-title">
+          {title}
+        </h3>
+        <p id="card-content" className="card-content">
+          {content}
+        </p>
       </div>
-    </div>
+    </article>
   );
 }
 
