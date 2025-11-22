@@ -1,5 +1,6 @@
 .card-container {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -7,15 +8,23 @@
   border-radius: var(--card-radius);
   background-color: var(--card-bg);
   padding: 0 var(--card-padding) var(--card-padding) var(--card-padding);
+  padding-top: calc(var(--card-icon-size) / 2 + var(--card-padding));
   max-width: min(24rem, 100%);
   max-height: fit-content;
 }
 
+.card-container:hover {
+  box-shadow: var(--shadow-hover);
+}
+
 .icon-container {
   display: flex;
+  position: absolute;
+  top: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: translateY(-50%);
   box-shadow: var(--card-icon-shadow);
   border-radius: var(--card-icon-radius);
   background-color: var(--card-icon-bg);
@@ -24,25 +33,25 @@
 }
 
 .card-title {
+  margin: 0;
   color: var(--card-title-color);
   font-weight: var(--card-title-weight);
   font-size: var(--card-title-size);
   line-height: var(--card-title-line-height);
   font-family: var(--card-font-family);
   text-align: center;
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .card-content {
+  margin: 0;
   color: var(--card-content-color);
   font-weight: var(--card-content-weight);
   font-size: var(--card-content-size);
   line-height: var(--card-content-line-height);
   font-family: var(--card-font-family);
   text-align: center;
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
