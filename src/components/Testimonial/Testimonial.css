@@ -1,0 +1,85 @@
+.testimonial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--testimonial-gap);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--testimonial-radius);
+  background-color: var(--testimonial-bg);
+  padding: var(--testimonial-padding);
+  max-width: min(23.5rem, 100%);
+  color: var(--testimonial-content-color);
+  font-family: var(--testimonial-font-family);
+  text-align: center;
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  width: 100%;
+}
+
+.testimonial-logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--testimonial-icon-shadow);
+  border-radius: var(--testimonial-icon-radius);
+  background-color: var(--testimonial-icon-bg);
+  width: var(--testimonial-icon-size);
+  min-width: var(--testimonial-icon-size);
+  height: var(--testimonial-icon-size);
+  min-height: var(--testimonial-icon-size);
+  overflow: hidden;
+}
+
+.testimonial-logo img {
+  display: block;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-quote {
+  margin: 0;
+  color: var(--testimonial-content-color);
+  font-weight: var(--testimonial-font-weight);
+  font-size: var(--testimonial-content-size);
+  line-height: var(--testimonial-content-line-height);
+  font-family: var(--testimonial-font-family);
+  text-align: justify;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  align-self: start;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.testimonial-author-name {
+  margin: 0;
+  color: var(--testimonial-title-color);
+  font-weight: var(--testimonial-title-weight);
+  font-size: var(--testimonial-title-size);
+  font-family: var(--testimonial-font-family);
+}
+
+.testimonial-author-role {
+  margin: 0;
+  color: var(--testimonial-content-color);
+  font-weight: var(--testimonial-title-weight);
+  font-size: var(--testimonial-title-size);
+  font-family: var(--testimonial-font-family);
+}
+
+@media (min-width: 640px) {
+  .testimonial-container {
+    padding: calc(var(--testimonial-padding) + 0.5rem);
+  }
+}
