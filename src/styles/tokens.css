@@ -55,12 +55,14 @@
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 
   /* Font Sizes */
-  --text-sm: 0.875rem;
   /* 14px */
-  --text-base: 1rem;
+  --text-sm: 0.875rem;
   /* 16px */
-  --text-lg: 1.125rem;
+  --text-base: 1rem;
   /* 18px */
+  --text-lg: 1.125rem;
+  /* 24px */
+  --text-extra-lg: 1.5rem;
 
   /* Font Weights */
   --font-normal: 400;
@@ -68,14 +70,14 @@
   --font-semibold: 600;
 
   /* Line Heights */
-  --leading-tight: 1.25;
   /* 20px for 16px font */
-  --leading-snug: 1.429;
+  --leading-tight: 1.25;
   /* 20px for 14px font */
-  --leading-normal: 1.5;
+  --leading-snug: 1.429;
   /* 24px for 16px font */
-  --leading-relaxed: 1.556;
+  --leading-normal: 1.5;
   /* 28px for 18px font */
+  --leading-relaxed: 1.556;
 
   /* ==================== */
   /* SPACING              */
@@ -161,4 +163,25 @@
   --card-icon-bg: var(--blue-600);
   --card-icon-radius: var(--radius-md);
   --card-icon-shadow: var(--shadow-lg);
+
+  /* Testimonial */
+  --testimonial-bg: var(--gray-50);
+  --testimonial-font-family: var(--font-sans);
+  --testimonial-font-weight: var(--font-medium);
+  --testimonial-title-size: var(--text-base);
+  --testimonial-title-weight: var(--font-medium);
+  --testimonial-title-color: var(--gray-900);
+  --testimonial-title-line-height: var(--leading-relaxed);
+  --testimonial-content-size: var(--text-extra-lg);
+  --testimonial-content-weight: var(--font-normal);
+  --testimonial-content-color: var(--gray-500);
+  --testimonial-content-line-height: var(--leading-normal);
+  --testimonial-author-line-height: var(--leading-normal);
+  --testimonial-gap: var(--space-8);
+  --testimonial-padding: var(--space-6);
+  --testimonial-radius: var(--radius-lg);
+  --testimonial-icon-size: var(--space-12);
+  --testimonial-icon-bg: var(--blue-600);
+  --testimonial-icon-radius: var(--radius-md);
+  --testimonial-icon-shadow: var(--shadow-lg);
 }
